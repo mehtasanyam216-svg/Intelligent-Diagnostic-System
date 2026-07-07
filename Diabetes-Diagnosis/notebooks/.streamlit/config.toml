@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#D32F2F"          # A professional, trustworthy medical red
+backgroundColor = "#FFFFFF"       # Crisp white main background
+secondaryBackgroundColor = "#F0F2F6" # Soft gray for the sidebar and metric cards
+textColor = "#31333F"             # Dark gray/black text for high readability
+font = "sans serif"
