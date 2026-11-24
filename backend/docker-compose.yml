@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: diagnostic
+      POSTGRES_PASSWORD: Sanyammehta
+      POSTGRES_DB: diagnostic
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U diagnostic"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://diagnostic:${POSTGRES_PASSWORD}@db:5432/diagnostic
+      SECRET_KEY: 67a9d5c739c285a27427b4f239b950065100028d1b7e46999571fbb986db44f6
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

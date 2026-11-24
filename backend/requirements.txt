@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+python-multipart
+joblib
+scikit-learn==1.7.2
+pandas
+numpy
+pillow
+tensorflow==2.21.0
+pyjwt
+bcrypt
+psycopg2-binary
