@@ -4,7 +4,7 @@ sqlalchemy
 pydantic
 python-multipart
 joblib
-scikit-learn==1.7.2
+scikit-learn==1.8.0
 pandas
 numpy
 pillow
